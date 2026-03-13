@@ -1,0 +1,274 @@
+state,city,water_system,zip_code,pfas_type,concentration_ppt,epa_limit_ppt,exceeds_limit,population_served
+NC,Wilmington,Cape Fear Public Utility,28401,PFOA,10.3,4.0,True,290000
+GA,Atlanta,Atlanta Watershed Mgmt,30303,PFOS,10.6,4.0,True,500000
+FL,Miami,Miami-Dade Water,33101,HFPO-DA (GenX),6.6,10.0,False,2700000
+WI,Milwaukee,Milwaukee Water Works,53202,PFOS,8.6,4.0,True,595000
+WI,Milwaukee,Milwaukee Water Works,53202,HFPO-DA (GenX),14.2,10.0,True,595000
+CO,Colorado Springs,Colorado Springs Utilities,80903,HFPO-DA (GenX),7.9,10.0,False,480000
+WI,Milwaukee,Milwaukee Water Works,53202,PFBS,2132.9,2000.0,True,595000
+PA,Philadelphia,Philadelphia Water Dept,19101,PFOS,14.1,4.0,True,1580000
+ME,Portland,Portland Water District,04101,PFOS,11.2,4.0,True,200000
+DE,Dover,City of Dover Water,19901,HFPO-DA (GenX),14.2,10.0,True,38000
+IN,Fort Wayne,Fort Wayne City Utilities,46802,PFOA,2.9,4.0,False,265000
+MO,St. Louis,St. Louis Water Division,63101,PFNA,9.0,10.0,False,310000
+TN,Nashville,Metro Nashville Water,37203,PFOS,4.7,4.0,True,700000
+FL,Orlando,Orlando Utilities Commission,32801,PFOA,5.0,4.0,True,285000
+AZ,Phoenix,City of Phoenix Water,85003,PFOA,5.3,4.0,True,1600000
+ME,Brunswick,Brunswick Water District,04011,PFBS,4146.1,2000.0,True,22000
+KY,Louisville,Louisville Water Company,40202,PFNA,8.6,10.0,False,850000
+WA,Tacoma,Tacoma Water,98402,PFOA,0.5,4.0,False,320000
+OH,Dayton,City of Dayton Water,45402,HFPO-DA (GenX),3.6,10.0,False,140000
+NY,Albany,Albany Water Board,12207,PFOA,16.7,4.0,True,98000
+OR,Portland,Portland Water Bureau,97201,PFBS,2943.1,2000.0,True,950000
+NH,Portsmouth,Portsmouth Water Division,03801,HFPO-DA (GenX),16.9,10.0,True,22000
+PA,Pittsburgh,Pittsburgh Water & Sewer,15222,PFBS,3631.5,2000.0,True,305000
+PA,Philadelphia,Philadelphia Water Dept,19101,HFPO-DA (GenX),18.1,10.0,True,1580000
+KS,Wichita,City of Wichita Water,67202,PFOA,2.7,4.0,False,400000
+CA,Los Angeles,LADWP,90001,PFOA,3.5,4.0,False,3900000
+MI,Ann Arbor,Ann Arbor Water,48104,PFBS,4187.1,2000.0,True,122000
+OR,Salem,City of Salem Water,97301,PFOA,7.8,4.0,True,175000
+IL,Chicago,Chicago DWM,60601,PFHxS,10.6,10.0,True,2700000
+MI,Detroit,Great Lakes Water Authority,48201,PFBS,1408.2,2000.0,False,670000
+IL,Springfield,CWLP Springfield,62701,PFNA,0.5,10.0,False,115000
+MA,Boston,Boston Water & Sewer,02101,PFOA,4.2,4.0,True,690000
+VA,Norfolk,Norfolk Utilities,23510,PFOA,7.7,4.0,True,245000
+OR,Portland,Portland Water Bureau,97201,PFOA,7.2,4.0,True,950000
+SC,Charleston,Charleston Water System,29401,PFHxS,5.1,10.0,False,400000
+CA,Los Angeles,LADWP,90001,PFOS,9.2,4.0,True,3900000
+KS,Wichita,City of Wichita Water,67202,PFNA,14.4,10.0,True,400000
+NY,Syracuse,Syracuse Water Dept,13202,PFHxS,13.4,10.0,True,145000
+GA,Savannah,City of Savannah Water,31401,HFPO-DA (GenX),12.1,10.0,True,145000
+GA,Atlanta,Atlanta Watershed Mgmt,30303,PFOA,2.1,4.0,False,500000
+MI,Grand Rapids,Grand Rapids Water System,49503,HFPO-DA (GenX),19.2,10.0,True,200000
+VA,Virginia Beach,HRSD,23451,HFPO-DA (GenX),3.9,10.0,False,450000
+DE,Wilmington,City of Wilmington Water,19801,PFHxS,14.0,10.0,True,72000
+CA,El Monte,El Monte Water District,91731,PFBS,722.3,2000.0,False,115000
+FL,Miami,Miami-Dade Water,33101,PFOS,1.3,4.0,False,2700000
+WA,Tacoma,Tacoma Water,98402,PFOS,9.8,4.0,True,320000
+TX,Dallas,Dallas Water Utilities,75201,PFOA,11.1,4.0,True,1300000
+CT,Hartford,MDC Hartford,06103,PFNA,7.5,10.0,False,400000
+TX,Austin,Austin Water,78701,PFOA,11.8,4.0,True,1000000
+MN,St. Paul,Saint Paul Water,55101,PFOS,4.1,4.0,True,310000
+CA,Riverside,Riverside Public Utilities,92501,PFOA,7.5,4.0,True,330000
+MN,St. Paul,Saint Paul Water,55101,PFBS,619.7,2000.0,False,310000
+KY,Louisville,Louisville Water Company,40202,PFOA,0.8,4.0,False,850000
+ME,Portland,Portland Water District,04101,PFNA,19.2,10.0,True,200000
+IL,Springfield,CWLP Springfield,62701,PFOA,6.8,4.0,True,115000
+NC,Fayetteville,Fayetteville PWC,28301,PFNA,19.5,10.0,True,210000
+IN,Fort Wayne,Fort Wayne City Utilities,46802,PFOS,2.5,4.0,False,265000
+WA,Seattle,Seattle Public Utilities,98101,PFOA,6.8,4.0,True,730000
+VT,Burlington,Burlington DPW Water,05401,HFPO-DA (GenX),21.7,10.0,True,42000
+NC,Charlotte,Charlotte Water,28202,HFPO-DA (GenX),29.9,10.0,True,880000
+CA,Riverside,Riverside Public Utilities,92501,HFPO-DA (GenX),15.6,10.0,True,330000
+MA,Worcester,Worcester Water Dept,01608,PFHxS,4.1,10.0,False,185000
+IN,Indianapolis,Citizens Water,46204,PFOS,1.2,4.0,False,870000
+CA,San Diego,San Diego Water Authority,92101,PFHxS,1.9,10.0,False,1420000
+RI,Providence,Providence Water Supply,02903,PFNA,11.8,10.0,True,600000
+NY,Syracuse,Syracuse Water Dept,13202,PFBS,3284.4,2000.0,True,145000
+CO,Colorado Springs,Colorado Springs Utilities,80903,PFBS,173.4,2000.0,False,480000
+AZ,Phoenix,City of Phoenix Water,85003,HFPO-DA (GenX),17.1,10.0,True,1600000
+IN,Indianapolis,Citizens Water,46204,PFHxS,11.5,10.0,True,870000
+MA,Springfield,Springfield Water,01103,PFOA,10.3,4.0,True,155000
+CA,Riverside,Riverside Public Utilities,92501,PFNA,12.8,10.0,True,330000
+OH,Columbus,Columbus Water Works,43215,PFBS,975.1,2000.0,False,900000
+NH,Merrimack,Merrimack Village District,03054,PFNA,4.4,10.0,False,26000
+IL,Rockford,Rockford Water Division,61101,PFBS,2031.5,2000.0,True,150000
+AZ,Goodyear,City of Goodyear Water,85338,PFBS,1237.1,2000.0,False,90000
+FL,Stuart,Stuart Water Utility,34994,PFNA,8.1,10.0,False,16000
+NY,New York City,NYC DEP,10001,HFPO-DA (GenX),10.1,10.0,True,8300000
+TX,El Paso,El Paso Water,79901,PFBS,610.2,2000.0,False,685000
+VT,Bennington,Bennington Water Dept,05201,PFOS,18.9,4.0,True,15000
+NC,Charlotte,Charlotte Water,28202,PFNA,4.6,10.0,False,880000
+CT,New Haven,RWA New Haven,06510,PFNA,11.0,10.0,True,430000
+FL,Jacksonville,JEA Water,32202,PFOS,5.5,4.0,True,950000
+ME,Portland,Portland Water District,04101,PFOA,20.8,4.0,True,200000
+TX,San Antonio,SAWS,78205,PFNA,4.1,10.0,False,1500000
+VT,Burlington,Burlington DPW Water,05401,PFOS,20.8,4.0,True,42000
+VA,Virginia Beach,HRSD,23451,PFOS,7.7,4.0,True,450000
+VA,Virginia Beach,HRSD,23451,PFHxS,13.0,10.0,True,450000
+FL,Miami,Miami-Dade Water,33101,PFNA,12.0,10.0,True,2700000
+IN,Indianapolis,Citizens Water,46204,PFBS,1570.6,2000.0,False,870000
+IL,Rockford,Rockford Water Division,61101,PFOS,4.9,4.0,True,150000
+TN,Memphis,Memphis Light Gas Water,38103,PFHxS,15.9,10.0,True,650000
+NE,Omaha,Metropolitan Utilities District,68102,PFOA,3.1,4.0,False,590000
+NE,Omaha,Metropolitan Utilities District,68102,PFHxS,8.5,10.0,False,590000
+AZ,Goodyear,City of Goodyear Water,85338,PFNA,5.5,10.0,False,90000
+WA,Tacoma,Tacoma Water,98402,PFBS,2650.2,2000.0,True,320000
+MN,Woodbury,City of Woodbury Water,55125,PFHxS,12.3,10.0,True,72000
+MA,Boston,Boston Water & Sewer,02101,PFOS,7.1,4.0,True,690000
+NJ,Paulsboro,Paulsboro Water Dept,08066,PFBS,3415.8,2000.0,True,6100
+MA,Worcester,Worcester Water Dept,01608,PFNA,2.6,10.0,False,185000
+ME,Brunswick,Brunswick Water District,04011,PFNA,18.0,10.0,True,22000
+WA,Seattle,Seattle Public Utilities,98101,PFBS,1093.4,2000.0,False,730000
+NH,Portsmouth,Portsmouth Water Division,03801,PFOS,11.9,4.0,True,22000
+TX,Austin,Austin Water,78701,PFBS,1392.3,2000.0,False,1000000
+IL,Chicago,Chicago DWM,60601,PFOS,5.1,4.0,True,2700000
+CO,Aurora,Aurora Water,80012,PFHxS,4.0,10.0,False,380000
+CT,Hartford,MDC Hartford,06103,PFBS,1728.9,2000.0,False,400000
+WI,Madison,Madison Water Utility,53703,HFPO-DA (GenX),0.7,10.0,False,260000
+MA,Springfield,Springfield Water,01103,PFBS,259.0,2000.0,False,155000
+GA,Atlanta,Atlanta Watershed Mgmt,30303,PFHxS,6.8,10.0,False,500000
+MI,Flint,Flint Water Department,48502,PFHxS,23.4,10.0,True,95000
+WI,Madison,Madison Water Utility,53703,PFOA,9.1,4.0,True,260000
+NH,Manchester,Manchester Water Works,03101,PFOA,19.6,4.0,True,115000
+KY,Lexington,Kentucky American Water,40507,PFOA,11.4,4.0,True,320000
+VA,Arlington,Arlington County Water,22201,PFBS,1682.0,2000.0,False,235000
+AL,Huntsville,Huntsville Utilities Water,35801,PFNA,11.9,10.0,True,215000
+NJ,Paramus,Paramus Water Dept,07652,HFPO-DA (GenX),6.4,10.0,False,26500
+IL,Peoria,Illinois American Water,61602,PFOA,6.5,4.0,True,115000
+NY,Newburgh,City of Newburgh Water,12550,PFOA,23.3,4.0,True,28000
+MN,Minneapolis,Minneapolis Water Works,55401,PFNA,4.2,10.0,False,420000
+CT,Hartford,MDC Hartford,06103,PFOS,10.0,4.0,True,400000
+CO,Denver,Denver Water,80202,PFBS,489.7,2000.0,False,1400000
+NY,Syracuse,Syracuse Water Dept,13202,HFPO-DA (GenX),29.9,10.0,True,145000
+MN,Woodbury,City of Woodbury Water,55125,PFNA,6.2,10.0,False,72000
+FL,Jacksonville,JEA Water,32202,HFPO-DA (GenX),7.8,10.0,False,950000
+IL,Springfield,CWLP Springfield,62701,PFHxS,11.3,10.0,True,115000
+DE,Wilmington,City of Wilmington Water,19801,PFOA,1.4,4.0,False,72000
+SC,Columbia,City of Columbia Water,29201,PFOS,2.0,4.0,False,380000
+NC,Wilmington,Cape Fear Public Utility,28401,PFHxS,2.5,10.0,False,290000
+CA,Sacramento,City of Sacramento,95814,HFPO-DA (GenX),13.2,10.0,True,525000
+NC,Raleigh,City of Raleigh Water,27601,PFOS,13.7,4.0,True,475000
+MI,Flint,Flint Water Department,48502,PFBS,4230.0,2000.0,True,95000
+ME,Portland,Portland Water District,04101,PFBS,3565.8,2000.0,True,200000
+MN,Woodbury,City of Woodbury Water,55125,HFPO-DA (GenX),15.2,10.0,True,72000
+PA,Horsham,Horsham Water & Sewer Auth,19044,PFOS,7.8,4.0,True,15000
+TX,Austin,Austin Water,78701,PFNA,14.2,10.0,True,1000000
+DE,Wilmington,City of Wilmington Water,19801,PFOS,7.6,4.0,True,72000
+IN,Indianapolis,Citizens Water,46204,PFNA,3.3,10.0,False,870000
+NC,Durham,Durham Water Mgmt,27701,PFOS,15.9,4.0,True,280000
+WI,Marinette,Marinette Water Utility,54143,PFBS,2235.6,2000.0,True,11000
+CT,Hartford,MDC Hartford,06103,PFHxS,5.7,10.0,False,400000
+CO,Denver,Denver Water,80202,PFOA,8.4,4.0,True,1400000
+MI,Kalamazoo,Kalamazoo Water Dept,49001,PFOS,9.8,4.0,True,76500
+KS,Wichita,City of Wichita Water,67202,PFOS,4.2,4.0,True,400000
+CO,Colorado Springs,Colorado Springs Utilities,80903,PFOS,4.5,4.0,True,480000
+MD,Annapolis,City of Annapolis Water,21401,PFHxS,11.9,10.0,True,40000
+NJ,Newark,Newark Water Department,07102,PFOA,18.7,4.0,True,285000
+KY,Louisville,Louisville Water Company,40202,PFHxS,13.6,10.0,True,850000
+TX,El Paso,El Paso Water,79901,PFOA,8.9,4.0,True,685000
+SC,Charleston,Charleston Water System,29401,HFPO-DA (GenX),6.0,10.0,False,400000
+VT,Bennington,Bennington Water Dept,05201,HFPO-DA (GenX),8.7,10.0,False,15000
+TX,El Paso,El Paso Water,79901,HFPO-DA (GenX),4.2,10.0,False,685000
+NC,Raleigh,City of Raleigh Water,27601,HFPO-DA (GenX),22.5,10.0,True,475000
+NY,Albany,Albany Water Board,12207,HFPO-DA (GenX),28.4,10.0,True,98000
+WA,Issaquah,Issaquah Water System,98027,PFOS,8.5,4.0,True,40000
+MD,Annapolis,City of Annapolis Water,21401,PFOS,3.1,4.0,False,40000
+SC,Charleston,Charleston Water System,29401,PFBS,278.6,2000.0,False,400000
+CA,San Diego,San Diego Water Authority,92101,PFOA,1.3,4.0,False,1420000
+LA,New Orleans,SWBNO,70112,PFOS,6.0,4.0,True,390000
+TN,Memphis,Memphis Light Gas Water,38103,PFNA,6.3,10.0,False,650000
+MI,Kalamazoo,Kalamazoo Water Dept,49001,PFNA,29.7,10.0,True,76500
+CT,New Haven,RWA New Haven,06510,HFPO-DA (GenX),6.0,10.0,False,430000
+NJ,Camden,Camden County MUA,08101,PFOA,5.9,4.0,True,77000
+GA,Savannah,City of Savannah Water,31401,PFOA,11.2,4.0,True,145000
+NC,Fayetteville,Fayetteville PWC,28301,PFOS,22.2,4.0,True,210000
+AL,Huntsville,Huntsville Utilities Water,35801,HFPO-DA (GenX),17.5,10.0,True,215000
+AL,Decatur,Decatur Utilities Water,35601,HFPO-DA (GenX),18.1,10.0,True,55000
+AZ,Phoenix,City of Phoenix Water,85003,PFNA,11.3,10.0,True,1600000
+WV,Charleston,WV American Water,25301,PFOA,8.1,4.0,True,58000
+CO,Denver,Denver Water,80202,PFNA,0.9,10.0,False,1400000
+NY,Albany,Albany Water Board,12207,PFOS,4.5,4.0,True,98000
+CO,Denver,Denver Water,80202,HFPO-DA (GenX),17.0,10.0,True,1400000
+VA,Richmond,Richmond DPU,23219,HFPO-DA (GenX),16.3,10.0,True,230000
+KS,Wichita,City of Wichita Water,67202,PFHxS,3.5,10.0,False,400000
+WI,Marinette,Marinette Water Utility,54143,PFOS,1.2,4.0,False,11000
+MA,Boston,Boston Water & Sewer,02101,HFPO-DA (GenX),4.4,10.0,False,690000
+OR,Portland,Portland Water Bureau,97201,PFOS,6.5,4.0,True,950000
+NY,Syracuse,Syracuse Water Dept,13202,PFOS,8.1,4.0,True,145000
+PA,Philadelphia,Philadelphia Water Dept,19101,PFNA,7.9,10.0,False,1580000
+LA,New Orleans,SWBNO,70112,PFOA,8.7,4.0,True,390000
+MN,St. Paul,Saint Paul Water,55101,PFOA,10.4,4.0,True,310000
+NC,Charlotte,Charlotte Water,28202,PFOA,19.0,4.0,True,880000
+GA,Augusta,Augusta Utilities,30901,PFOS,3.3,4.0,False,200000
+MN,St. Paul,Saint Paul Water,55101,PFHxS,0.7,10.0,False,310000
+MI,Detroit,Great Lakes Water Authority,48201,PFHxS,6.7,10.0,False,670000
+DE,Wilmington,City of Wilmington Water,19801,PFNA,12.5,10.0,True,72000
+WI,Madison,Madison Water Utility,53703,PFNA,11.7,10.0,True,260000
+FL,Tampa,Tampa Water Dept,33602,PFBS,1977.7,2000.0,False,390000
+NC,Charlotte,Charlotte Water,28202,PFHxS,15.1,10.0,True,880000
+WV,Charleston,WV American Water,25301,PFOS,4.5,4.0,True,58000
+PA,Warminster,Warminster Municipal Auth,18974,PFBS,1538.2,2000.0,False,33000
+TX,Austin,Austin Water,78701,PFOS,3.3,4.0,False,1000000
+WI,Marinette,Marinette Water Utility,54143,PFNA,10.4,10.0,True,11000
+IA,Des Moines,Des Moines Water Works,50309,HFPO-DA (GenX),3.0,10.0,False,500000
+AL,Decatur,Decatur Utilities Water,35601,PFOS,1.4,4.0,False,55000
+PA,Philadelphia,Philadelphia Water Dept,19101,PFOA,12.0,4.0,True,1580000
+WA,Tacoma,Tacoma Water,98402,HFPO-DA (GenX),17.6,10.0,True,320000
+MD,Annapolis,City of Annapolis Water,21401,PFBS,2104.2,2000.0,True,40000
+VT,Burlington,Burlington DPW Water,05401,PFHxS,15.4,10.0,True,42000
+NJ,Trenton,Trenton Water Works,08608,HFPO-DA (GenX),12.9,10.0,True,84000
+OH,Cincinnati,Greater Cincinnati Water,45202,PFBS,2592.4,2000.0,True,850000
+PA,Bucks County,Bucks County Water,19020,PFOS,19.2,4.0,True,62000
+VA,Norfolk,Norfolk Utilities,23510,HFPO-DA (GenX),4.9,10.0,False,245000
+NJ,Paulsboro,Paulsboro Water Dept,08066,PFOS,18.5,4.0,True,6100
+OR,Portland,Portland Water Bureau,97201,PFNA,16.4,10.0,True,950000
+OH,Dayton,City of Dayton Water,45402,PFOA,1.1,4.0,False,140000
+PA,Warminster,Warminster Municipal Auth,18974,PFOA,0.6,4.0,False,33000
+AL,Decatur,Decatur Utilities Water,35601,PFHxS,10.7,10.0,True,55000
+FL,Miami,Miami-Dade Water,33101,PFOA,5.1,4.0,True,2700000
+VT,Bennington,Bennington Water Dept,05201,PFBS,3910.6,2000.0,True,15000
+NC,Fayetteville,Fayetteville PWC,28301,HFPO-DA (GenX),4.7,10.0,False,210000
+IA,Cedar Rapids,Cedar Rapids Water,52401,PFNA,10.3,10.0,True,130000
+CA,Los Angeles,LADWP,90001,PFNA,3.1,10.0,False,3900000
+AZ,Tucson,Tucson Water,85701,PFBS,2705.1,2000.0,True,545000
+VT,Burlington,Burlington DPW Water,05401,PFBS,3102.0,2000.0,True,42000
+WV,Parkersburg,Parkersburg Utility Board,26101,PFHxS,17.5,10.0,True,31000
+IL,Rockford,Rockford Water Division,61101,PFHxS,4.5,10.0,False,150000
+TX,San Antonio,SAWS,78205,PFOS,5.9,4.0,True,1500000
+FL,Jacksonville,JEA Water,32202,PFOA,2.4,4.0,False,950000
+VA,Richmond,Richmond DPU,23219,PFNA,15.3,10.0,True,230000
+PA,Horsham,Horsham Water & Sewer Auth,19044,PFOA,16.2,4.0,True,15000
+TX,Houston,City of Houston Water,77001,PFBS,2997.9,2000.0,True,2300000
+CA,Los Angeles,LADWP,90001,PFHxS,7.8,10.0,False,3900000
+CA,Sacramento,City of Sacramento,95814,PFHxS,9.8,10.0,False,525000
+NY,Hoosick Falls,Hoosick Falls Water,12090,PFBS,519.7,2000.0,False,3500
+RI,Providence,Providence Water Supply,02903,HFPO-DA (GenX),1.5,10.0,False,600000
+VA,Norfolk,Norfolk Utilities,23510,PFHxS,13.9,10.0,True,245000
+CA,Riverside,Riverside Public Utilities,92501,PFHxS,10.5,10.0,True,330000
+AL,Huntsville,Huntsville Utilities Water,35801,PFOA,6.7,4.0,True,215000
+MA,Cape Cod,Cape Cod Water District,02601,PFBS,1911.8,2000.0,False,215000
+LA,New Orleans,SWBNO,70112,HFPO-DA (GenX),1.8,10.0,False,390000
+VA,Norfolk,Norfolk Utilities,23510,PFOS,8.9,4.0,True,245000
+KY,Lexington,Kentucky American Water,40507,HFPO-DA (GenX),3.8,10.0,False,320000
+TN,Nashville,Metro Nashville Water,37203,PFNA,1.2,10.0,False,700000
+NE,Omaha,Metropolitan Utilities District,68102,PFOS,10.6,4.0,True,590000
+NY,Albany,Albany Water Board,12207,PFBS,2685.6,2000.0,True,98000
+PA,Bucks County,Bucks County Water,19020,PFHxS,16.4,10.0,True,62000
+IL,Chicago,Chicago DWM,60601,HFPO-DA (GenX),11.3,10.0,True,2700000
+PA,Horsham,Horsham Water & Sewer Auth,19044,HFPO-DA (GenX),26.2,10.0,True,15000
+IA,Cedar Rapids,Cedar Rapids Water,52401,PFOA,2.8,4.0,False,130000
+AZ,Goodyear,City of Goodyear Water,85338,PFHxS,2.6,10.0,False,90000
+WV,Charleston,WV American Water,25301,PFHxS,23.4,10.0,True,58000
+MD,Baltimore,Baltimore DPW,21202,HFPO-DA (GenX),1.6,10.0,False,620000
+CA,Sacramento,City of Sacramento,95814,PFOA,11.7,4.0,True,525000
+SC,Charleston,Charleston Water System,29401,PFOS,3.6,4.0,False,400000
+IN,Fort Wayne,Fort Wayne City Utilities,46802,PFHxS,0.7,10.0,False,265000
+WI,Marinette,Marinette Water Utility,54143,HFPO-DA (GenX),7.0,10.0,False,11000
+AZ,Phoenix,City of Phoenix Water,85003,PFOS,11.1,4.0,True,1600000
+NY,Hoosick Falls,Hoosick Falls Water,12090,PFOA,23.7,4.0,True,3500
+WI,Madison,Madison Water Utility,53703,PFHxS,22.7,10.0,True,260000
+PA,Warminster,Warminster Municipal Auth,18974,PFHxS,5.2,10.0,False,33000
+FL,Stuart,Stuart Water Utility,34994,PFOA,6.7,4.0,True,16000
+KY,Lexington,Kentucky American Water,40507,PFOS,9.1,4.0,True,320000
+RI,Providence,Providence Water Supply,02903,PFHxS,0.5,10.0,False,600000
+MI,Ann Arbor,Ann Arbor Water,48104,PFOS,11.6,4.0,True,122000
+NY,Hoosick Falls,Hoosick Falls Water,12090,PFOS,22.0,4.0,True,3500
+VT,Bennington,Bennington Water Dept,05201,PFNA,25.3,10.0,True,15000
+AL,Birmingham,Birmingham Water Works,35203,PFOA,22.0,4.0,True,600000
+MD,Annapolis,City of Annapolis Water,21401,HFPO-DA (GenX),9.1,10.0,False,40000
+ME,Brunswick,Brunswick Water District,04011,HFPO-DA (GenX),14.2,10.0,True,22000
+WA,Issaquah,Issaquah Water System,98027,PFNA,3.1,10.0,False,40000
+VA,Richmond,Richmond DPU,23219,PFHxS,1.9,10.0,False,230000
+WA,Issaquah,Issaquah Water System,98027,PFHxS,7.1,10.0,False,40000
+TX,El Paso,El Paso Water,79901,PFNA,1.3,10.0,False,685000
+FL,Stuart,Stuart Water Utility,34994,PFOS,10.4,4.0,True,16000
+WI,Milwaukee,Milwaukee Water Works,53202,PFOA,2.0,4.0,False,595000
+GA,Savannah,City of Savannah Water,31401,PFBS,1686.1,2000.0,False,145000
+MO,Kansas City,KC Water,64106,PFOA,3.7,4.0,False,480000
+MI,Ann Arbor,Ann Arbor Water,48104,PFOA,9.8,4.0,True,122000
+MD,Baltimore,Baltimore DPW,21202,PFNA,15.3,10.0,True,620000
+MA,Boston,Boston Water & Sewer,02101,PFBS,699.6,2000.0,False,690000
+IL,Chicago,Chicago DWM,60601,PFOA,7.2,4.0,True,2700000
+MO,St. Louis,St. Louis Water Division,63101,PFBS,1955.4,2000.0,False,310000
+OH,Cleveland,Cleveland Water Dept,44114,HFPO-DA (GenX),8.7,10.0,False,380000
