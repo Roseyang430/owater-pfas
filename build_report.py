@@ -347,6 +347,6 @@ document.getElementById('zipInput').addEventListener('keypress', function(e) {{
 with open(BASE_DIR / 'pfas-report.html', 'w') as f:
     f.write(html)
 
-print("✓ pfas-report.html 已生成")
+print("✓ pfas-report.html 已更新")
 print(f"  文件大小: {len(html)/1024:.0f} KB")
 print("  包含: 3 张 base64 嵌入图表 + ZIP 查询功能")

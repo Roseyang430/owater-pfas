@@ -2,10 +2,10 @@
 
 Data-driven analysis of PFAS (forever chemicals) contamination in US drinking water, by O.Water (www.o-water.org).
 
-This version processes the real EPA UCMR5 PFAS public dataset instead of simulated data.
+This project processes EPA UCMR5 PFAS public monitoring data.
 
 ## What's Inside
-- `generate_data.py` - Converts the EPA UCMR5 zip into the analysis-ready CSV
+- `process_epa_ucmr5_data.py` - Converts the EPA UCMR5 zip into the analysis-ready CSV
 - `pfas_data.csv` - Processed system-level PFAS detection data across US water systems
 - `pfas-report.html` - Interactive report with visualizations
 - `chart_*.png` - Data visualizations
@@ -21,7 +21,7 @@ data/EPA_UCMR5_PFAS_data.zip
 or point the script to it:
 
 ```bash
-UCMR5_ZIP_PATH=/path/to/EPA_UCMR5_PFAS_data.zip python3 generate_data.py
+UCMR5_ZIP_PATH=/path/to/EPA_UCMR5_PFAS_data.zip python3 process_epa_ucmr5_data.py
 python3 analysis_overview.py
 python3 analysis_deep.py
 python3 build_report.py
