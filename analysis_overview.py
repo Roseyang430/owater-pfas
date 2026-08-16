@@ -1,9 +1,15 @@
 import pandas as pd
-import matplotlib.pyplot as plt
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+os.environ.setdefault('MPLCONFIGDIR', str(BASE_DIR / '.matplotlib'))
+
 import matplotlib
 matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 
-df = pd.read_csv('/Users/binruyang/owater-pfas/pfas_data.csv')
+df = pd.read_csv(BASE_DIR / 'pfas_data.csv')
 
 # === 1. Basic Statistics ===
 total = len(df)
@@ -60,16 +66,16 @@ ax.legend(fontsize=10)
 plt.xticks(fontsize=11)
 plt.yticks(fontsize=11)
 plt.tight_layout()
-plt.savefig('/Users/binruyang/owater-pfas/chart_states.png', dpi=150)
+plt.savefig(BASE_DIR / 'chart_states.png', dpi=150)
 print("\n✓ chart_states.png 已保存")
 
 # === Summary in Chinese ===
 print("\n" + "=" * 50)
 print("分析解读")
 print("=" * 50)
-print(f"在本数据集的 {total} 条 PFAS 检测记录中，有 {int(exceeded)} 条超过了 EPA 2024 年设定的标准限值，")
+print(f"在本数据集的 {total} 条水系统-PFAS 检出记录中，有 {int(exceeded)} 条超过了 EPA 2024 年设定的标准限值，")
 print(f"整体超标率达 {rate:.1f}%。")
 print(f"其中 {pfas_exceed.index[0]} 是超标最为严重的 PFAS 化学物质，共有 {pfas_exceed.iloc[0]} 次超标。")
 print(f"从州级数据来看，{state_stats.iloc[0]['state']} 州的超标率最高，达到 {state_stats.iloc[0]['rate']:.1f}%。")
-print("这意味着在这些地区，饮用水中的'永久化学物质'浓度已超过联邦安全标准，")
+print("这意味着在这些地区，部分供水系统中的'永久化学物质'浓度已超过联邦安全标准，")
 print("对居民健康构成潜在风险。")

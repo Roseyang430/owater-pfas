@@ -1,50 +1,64 @@
 import pandas as pd
 import base64
+import json
+from pathlib import Path
 
-df = pd.read_csv('/Users/binruyang/owater-pfas/pfas_data.csv')
+BASE_DIR = Path(__file__).resolve().parent
+df = pd.read_csv(BASE_DIR / 'pfas_data.csv')
 
 # Stats
 total_records = len(df)
 exceeded = int(df['exceeds_limit'].sum())
 rate = exceeded / total_records * 100
 exceeded_df = df[df['exceeds_limit']]
-affected_cities = exceeded_df.drop_duplicates(subset=['state', 'city'])
-total_affected = int(affected_cities['population_served'].sum())
+affected_systems = exceeded_df.drop_duplicates(subset=['state', 'water_system'])
+total_affected = int(affected_systems['population_served'].sum())
+total_systems = df['pwsid'].nunique() if 'pwsid' in df.columns else df['water_system'].nunique()
+states_analyzed = df['state'].nunique()
 worst_state_stats = df.groupby('state').agg(
     total=('exceeds_limit', 'count'),
     exc=('exceeds_limit', 'sum')
 ).reset_index()
 worst_state_stats['rate'] = worst_state_stats['exc'] / worst_state_stats['total'] * 100
-worst_city = affected_cities.sort_values('population_served', ascending=False).iloc[0]
+worst_state_stats = worst_state_stats.sort_values('rate', ascending=False)
+top_state = worst_state_stats.iloc[0]
+top_pfas = exceeded_df.groupby('pfas_type').size().sort_values(ascending=False)
+top_pfas_name = top_pfas.index[0] if not top_pfas.empty else 'PFAS'
+affected_display = f"{total_affected/1e6:.1f}M+" if total_affected >= 1_000_000 else f"{total_affected:,}+"
 
 # Encode images
 def img_to_base64(path):
     with open(path, 'rb') as f:
         return base64.b64encode(f.read()).decode()
 
-img_states = img_to_base64('/Users/binruyang/owater-pfas/chart_states.png')
-img_cities = img_to_base64('/Users/binruyang/owater-pfas/chart_cities.png')
-img_types = img_to_base64('/Users/binruyang/owater-pfas/chart_types.png')
+img_states = img_to_base64(BASE_DIR / 'chart_states.png')
+img_cities = img_to_base64(BASE_DIR / 'chart_cities.png')
+img_types = img_to_base64(BASE_DIR / 'chart_types.png')
 
 # Build ZIP code lookup data for Step 7
 zip_data = {}
 for _, row in df.iterrows():
-    zc = row['zip_code']
-    if zc not in zip_data:
-        zip_data[zc] = {
-            'city': row['city'],
-            'state': row['state'],
-            'water_system': row['water_system'],
-            'detections': []
-        }
-    zip_data[zc]['detections'].append({
-        'pfas_type': row['pfas_type'],
-        'concentration': row['concentration_ppt'],
-        'limit': row['epa_limit_ppt'],
-        'exceeds': bool(row['exceeds_limit'])
-    })
+    zip_codes = str(row.get('zip_codes', row['zip_code'])).split('|')
+    for zc in zip_codes:
+        zc = zc.strip()
+        if not zc or zc.lower() == 'nan':
+            continue
 
-import json
+        if zc not in zip_data:
+            zip_data[zc] = {
+                'city': f'ZIP {zc}',
+                'state': row['state'],
+                'water_system': 'UCMR5 water systems serving this ZIP',
+                'detections': []
+            }
+        zip_data[zc]['detections'].append({
+            'system': row['water_system'],
+            'pfas_type': row['pfas_type'],
+            'concentration': row['concentration_ppt'],
+            'limit': row['epa_limit_ppt'],
+            'exceeds': bool(row['exceeds_limit'])
+        })
+
 zip_json = json.dumps(zip_data)
 
 html = f'''<!DOCTYPE html>
@@ -153,8 +167,8 @@ footer .org {{ font-size: 1.3rem; font-weight: 700; color: white; margin-bottom:
 <!-- Hero -->
 <header class="hero">
   <h1>Toxic Tap</h1>
-  <p class="subtitle">PFAS Contamination in America's Drinking Water &mdash; A Data Analysis by O.Water</p>
-  <div class="impact">{rate:.0f}% of tested US water systems contain PFAS above EPA limits</div>
+  <p class="subtitle">PFAS Contamination in America's Drinking Water &mdash; EPA UCMR5 Analysis by O.Water</p>
+  <div class="impact">{rate:.0f}% of detected system-PFAS records exceed EPA limits</div>
 </header>
 
 <!-- ZIP Search -->
@@ -170,42 +184,41 @@ footer .org {{ font-size: 1.3rem; font-weight: 700; color: white; margin-bottom:
 <div class="stats">
   <div class="stat-card">
     <div class="number">{total_records}</div>
-    <div class="label">Total Detections</div>
+    <div class="label">Detection Records</div>
   </div>
   <div class="stat-card alert">
     <div class="number">{rate:.0f}%</div>
     <div class="label">Exceedance Rate</div>
   </div>
   <div class="stat-card alert">
-    <div class="number">{total_affected/1e6:.0f}M+</div>
-    <div class="label">People Affected</div>
+    <div class="number">{affected_display}</div>
+    <div class="label">Minimum People Served</div>
   </div>
   <div class="stat-card">
-    <div class="number">37</div>
-    <div class="label">States Analyzed</div>
+    <div class="number">{states_analyzed}</div>
+    <div class="label">States/Territories</div>
   </div>
 </div>
 
 <!-- Chart 1: States -->
 <div class="section">
   <h2 class="alert">Exceedance by State</h2>
-  <p>The chart below shows the PFAS exceedance rate for the 15 states with the highest rates. States shown in
-  red have more than half of their tested water systems exceeding EPA limits. West Virginia, Maine, and Oregon
-  top the list with 100% exceedance rates in sampled systems, indicating severe and widespread contamination.</p>
+  <p>The chart below shows the exceedance rate for detected PFAS records in the 15 highest-rate states or territories.
+  Records are aggregated at the water-system and compound level using the maximum reported UCMR5 result for each
+  regulated PFAS. {top_state['state']} has the highest rate in this processed dataset at {top_state['rate']:.0f}%.</p>
   <img src="data:image/png;base64,{img_states}" alt="PFAS Exceedance Rate by State">
   <p>PFOS and PFOA&mdash;the two most commonly detected compounds&mdash;have extremely low EPA limits of just
   4 parts per trillion (ppt), making exceedance more likely even at trace concentrations.</p>
 </div>
 
-<!-- Chart 2: Cities -->
+<!-- Chart 2: Water Systems -->
 <div class="section">
-  <h2 class="alert">Most Affected Cities</h2>
-  <p>Major metropolitan areas are not immune. The following chart shows the 10 cities where the largest populations
-  are served by water systems with at least one PFAS compound exceeding federal limits. New York City alone
-  has 8.3 million residents potentially exposed.</p>
-  <img src="data:image/png;base64,{img_cities}" alt="Top 10 Cities Most Affected by PFAS Contamination">
-  <p>Chicago stands out with 4 different PFAS compounds exceeding limits simultaneously, while Phoenix and
-  Philadelphia each have 3&ndash;4 compounds above safe levels.</p>
+  <h2 class="alert">Most Affected Water Systems</h2>
+  <p>The public UCMR5 files provide water-system names and broad size categories, not exact city populations.
+  This chart keeps the original impact-analysis structure but reports conservative lower-bound service population
+  estimates based on those size categories.</p>
+  <img src="data:image/png;base64,{img_cities}" alt="Top 10 Water Systems Most Affected by PFAS Contamination">
+  <p>Across the processed detection records, {top_pfas_name} is the PFAS compound with the most exceedances.</p>
 </div>
 
 <!-- Chart 3: PFAS Types -->
@@ -279,7 +292,7 @@ footer .org {{ font-size: 1.3rem; font-weight: 700; color: white; margin-bottom:
   <div class="org">O.Water</div>
   <p>Data-driven water quality advocacy through analysis and public education.</p>
   <p style="margin-top:12px;"><a href="https://www.o-water.org" target="_blank">www.o-water.org</a></p>
-  <p style="margin-top:20px; font-size:0.8rem; opacity:0.5;">Data based on EPA UCMR and state-reported PFAS monitoring results. For the most current data, visit
+  <p style="margin-top:20px; font-size:0.8rem; opacity:0.5;">Data processed from EPA UCMR5 PFAS monitoring results. For the most current data, visit
   <a href="https://www.epa.gov/sdwa/and-polyfluoroalkyl-substances-pfas" target="_blank">EPA.gov</a>.</p>
 </footer>
 
@@ -314,7 +327,7 @@ function checkZip() {{
     const badge = d.exceeds
       ? '<span class="exceed-badge">EXCEEDS LIMIT</span>'
       : '<span class="safe-badge">WITHIN LIMIT</span>';
-    html += '<div class="detection">' + d.pfas_type + ': <strong>' + d.concentration + ' ppt</strong> (limit: ' + d.limit + ' ppt)' + badge + '</div>';
+    html += '<div class="detection"><strong>' + d.system + '</strong><br>' + d.pfas_type + ': <strong>' + d.concentration + ' ppt</strong> (limit: ' + d.limit + ' ppt)' + badge + '</div>';
   }});
   if (hasExceed) {{
     html += '<p style="margin-top:14px;">We recommend using an NSF-certified reverse osmosis filter for your drinking water.</p>';
@@ -331,7 +344,7 @@ document.getElementById('zipInput').addEventListener('keypress', function(e) {{
 </body>
 </html>'''
 
-with open('/Users/binruyang/owater-pfas/pfas-report.html', 'w') as f:
+with open(BASE_DIR / 'pfas-report.html', 'w') as f:
     f.write(html)
 
 print("✓ pfas-report.html 已生成")
