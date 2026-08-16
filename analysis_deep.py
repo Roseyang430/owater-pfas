@@ -49,7 +49,7 @@ for bar, val in zip(bars, city_pop_sorted['population']):
             f'{val:,.0f}', va='center', fontsize=10, fontweight='bold')
 
 ax.set_xlabel('Minimum Population Served Estimate', fontsize=13, fontweight='bold')
-ax.set_title('Top 10 Water Systems Most Affected by PFAS Contamination', fontsize=16, fontweight='bold', pad=15)
+ax.set_title('Top 10 Water Systems by Minimum Population Served Estimate', fontsize=16, fontweight='bold', pad=15)
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
 plt.tight_layout()
@@ -78,20 +78,17 @@ plt.tight_layout()
 plt.savefig(BASE_DIR / 'chart_types.png', dpi=150)
 print("✓ chart_types.png 已保存")
 
-# === 4. Summary ===
+# === 4. Method note ===
 print("\n" + "=" * 50)
-print("总结：如果你是一个美国居民，这些数据意味着什么？")
+print("数据口径说明")
 print("=" * 50)
 print(f"""
-至少约 {total_affected/1e6:.1f} 百万美国人所处供水系统的 PFAS 检出值超过了 EPA 2024 年设定的安全标准。
-这些被称为"永久化学物质"的 PFAS 不会在环境中自然降解，会在人体中持续累积。
+本项目使用 EPA UCMR5 公开监测数据中 EPA 2024 饮用水法规涉及的 6 类 PFAS：
+PFOA、PFOS、PFHxS、PFNA、HFPO-DA (GenX)、PFBS。
 
-PFOS 和 PFOA 是最常被检出且超标最严重的两种 PFAS，EPA 将它们的安全限值设为仅 4 ppt
-（万亿分之四）——这相当于一个奥运游泳池中的几滴水。
+原始检测值单位为 ug/L，处理时转换为 ppt/ng/L，并与 EPA 2024 MCL 进行比较。
+同一水系统、同一 PFAS 化合物有多次检出时，使用最高检出值。
 
-真实 UCMR5 公开文件不直接提供城市或精确服务人口，因此这里使用水系统层级和规模档最低值估计影响范围。
-
-科学研究已将 PFAS 暴露与癌症、甲状腺疾病、免疫系统损伤和生殖问题联系起来。
-如果你担心家中的饮用水安全，建议使用经 NSF 认证的反渗透（RO）过滤系统，
-这是目前去除 PFAS 最有效的家用方法。普通的 Brita 滤水壶对 PFAS 的去除效果有限。
+UCMR5 公开文件不直接提供城市或精确服务人口，因此本项目使用水系统名称作为地理展示维度，
+并根据系统规模字段给出最低服务人口估计。
 """)

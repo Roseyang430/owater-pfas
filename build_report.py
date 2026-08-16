@@ -66,7 +66,7 @@ html = f'''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Toxic Tap: PFAS Contamination in America's Drinking Water</title>
+<title>EPA UCMR5 PFAS Analysis</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 * {{ margin: 0; padding: 0; box-sizing: border-box; }}
@@ -139,12 +139,8 @@ body {{ font-family: 'Inter', -apple-system, sans-serif; color: #2c3e50; line-he
 /* Action items */
 .action-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }}
 .action-card {{ padding: 24px; border-radius: 10px; border: 1px solid #e0e0e0; }}
-.action-card.recommended {{ background: #eafaf1; border-color: #2ecc71; }}
-.action-card.limited {{ background: #fdf2e9; border-color: #e67e22; }}
 .action-card h3 {{ margin-bottom: 8px; font-size: 1.1rem; }}
 .action-card .effectiveness {{ font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; }}
-.action-card.recommended .effectiveness {{ color: #27ae60; }}
-.action-card.limited .effectiveness {{ color: #e67e22; }}
 
 /* Footer */
 footer {{ background: #1a2332; color: rgba(255,255,255,0.7); text-align: center; padding: 40px 20px; margin-top: 40px; }}
@@ -166,8 +162,8 @@ footer .org {{ font-size: 1.3rem; font-weight: 700; color: white; margin-bottom:
 
 <!-- Hero -->
 <header class="hero">
-  <h1>Toxic Tap</h1>
-  <p class="subtitle">PFAS Contamination in America's Drinking Water &mdash; EPA UCMR5 Analysis by O.Water</p>
+  <h1>EPA UCMR5 PFAS Analysis</h1>
+  <p class="subtitle">Processed public monitoring data for regulated PFAS detections in drinking water systems</p>
   <div class="impact">{rate:.0f}% of detected system-PFAS records exceed EPA limits</div>
 </header>
 
@@ -207,16 +203,14 @@ footer .org {{ font-size: 1.3rem; font-weight: 700; color: white; margin-bottom:
   Records are aggregated at the water-system and compound level using the maximum reported UCMR5 result for each
   regulated PFAS. {top_state['state']} has the highest rate in this processed dataset at {top_state['rate']:.0f}%.</p>
   <img src="data:image/png;base64,{img_states}" alt="PFAS Exceedance Rate by State">
-  <p>PFOS and PFOA&mdash;the two most commonly detected compounds&mdash;have extremely low EPA limits of just
-  4 parts per trillion (ppt), making exceedance more likely even at trace concentrations.</p>
+  <p>Concentrations are converted from ug/L to ppt/ng/L before comparison with the EPA 2024 MCL values.</p>
 </div>
 
 <!-- Chart 2: Water Systems -->
 <div class="section">
   <h2 class="alert">Most Affected Water Systems</h2>
   <p>The public UCMR5 files provide water-system names and broad size categories, not exact city populations.
-  This chart keeps the original impact-analysis structure but reports conservative lower-bound service population
-  estimates based on those size categories.</p>
+  The chart uses lower-bound service population estimates derived from those size categories.</p>
   <img src="data:image/png;base64,{img_cities}" alt="Top 10 Water Systems Most Affected by PFAS Contamination">
   <p>Across the processed detection records, {top_pfas_name} is the PFAS compound with the most exceedances.</p>
 </div>
@@ -224,12 +218,10 @@ footer .org {{ font-size: 1.3rem; font-weight: 700; color: white; margin-bottom:
 <!-- Chart 3: PFAS Types -->
 <div class="section">
   <h2>PFAS Compounds Detected</h2>
-  <p>Six regulated PFAS compounds were analyzed. The distribution below shows how frequently each type was
-  detected across all water systems tested. PFOS and PFOA dominate detections, consistent with their
-  historical widespread use in firefighting foam, non-stick coatings, and food packaging.</p>
+  <p>Six PFAS compounds covered by EPA 2024 drinking water standards are included in this processed dataset.
+  The chart shows the share of system-compound detection records by PFAS type.</p>
   <img src="data:image/png;base64,{img_types}" alt="Distribution of PFAS Types Detected">
-  <p>HFPO-DA (marketed as GenX) is a newer replacement compound that is increasingly detected,
-  raising concerns that newer PFAS alternatives may not be safer than the chemicals they replaced.</p>
+  <p>The processed compounds are PFOA, PFOS, PFHxS, PFNA, HFPO-DA (GenX), and PFBS.</p>
 </div>
 
 <!-- EPA Standards -->
@@ -255,34 +247,30 @@ footer .org {{ font-size: 1.3rem; font-weight: 700; color: white; margin-bottom:
   implement treatment solutions. Full compliance is required by 2029.</p>
 </div>
 
-<!-- Action Items -->
+<!-- Method Notes -->
 <div class="section">
-  <h2>How to Protect Yourself</h2>
-  <p>If your water system has detected PFAS above EPA limits, here are evidence-based steps you can take:</p>
+  <h2>Processing Notes</h2>
+  <p>This report summarizes processed EPA UCMR5 public monitoring data. The raw EPA zip is not stored in this repository.</p>
   <div class="action-grid">
-    <div class="action-card recommended">
-      <h3>Reverse Osmosis (RO) System</h3>
-      <div class="effectiveness">Effectiveness: 90&ndash;99% PFAS removal</div>
-      <p>Under-sink or whole-house RO systems are the gold standard for PFAS removal.
-      Look for NSF/ANSI 58 certification. Costs $150&ndash;$500 for under-sink models.</p>
+    <div class="action-card">
+      <h3>Data Source</h3>
+      <div class="effectiveness">EPA UCMR5 public monitoring files</div>
+      <p>The processing script reads UCMR5_All.txt and UCMR5_ZIPCodes.txt from the EPA UCMR5 PFAS data package.</p>
     </div>
-    <div class="action-card recommended">
-      <h3>Activated Carbon Block Filter</h3>
-      <div class="effectiveness">Effectiveness: 70&ndash;95% PFAS removal</div>
-      <p>High-quality granular activated carbon (GAC) filters certified to NSF/ANSI 53 can significantly
-      reduce PFAS levels. Ensure regular filter replacement.</p>
+    <div class="action-card">
+      <h3>Unit Conversion</h3>
+      <div class="effectiveness">ug/L to ppt/ng/L</div>
+      <p>Reported analytical values are multiplied by 1,000 before comparison with EPA 2024 drinking water limits.</p>
     </div>
-    <div class="action-card limited">
-      <h3>Standard Pitcher Filters (e.g., Brita)</h3>
-      <div class="effectiveness">Effectiveness: Limited (0&ndash;50%)</div>
-      <p>Standard pitcher filters using basic carbon are not designed for PFAS removal. Some newer models
-      with specialized media may offer partial reduction, but should not be relied upon.</p>
+    <div class="action-card">
+      <h3>Aggregation</h3>
+      <div class="effectiveness">Water system + PFAS compound</div>
+      <p>When a water system has multiple detected results for the same compound, the maximum detected value is retained.</p>
     </div>
-    <div class="action-card limited">
-      <h3>Boiling Water</h3>
-      <div class="effectiveness">Effectiveness: None &mdash; may increase concentration</div>
-      <p>PFAS are extremely heat-stable. Boiling water does NOT remove PFAS and can actually
-      concentrate them as water evaporates. Do not rely on boiling for PFAS removal.</p>
+    <div class="action-card">
+      <h3>Population Field</h3>
+      <div class="effectiveness">Lower-bound estimate</div>
+      <p>UCMR5 size categories are used for minimum service population estimates because exact population is not included.</p>
     </div>
   </div>
 </div>
@@ -290,7 +278,7 @@ footer .org {{ font-size: 1.3rem; font-weight: 700; color: white; margin-bottom:
 <!-- Footer -->
 <footer>
   <div class="org">O.Water</div>
-  <p>Data-driven water quality advocacy through analysis and public education.</p>
+  <p>PFAS monitoring data analysis project.</p>
   <p style="margin-top:12px;"><a href="https://www.o-water.org" target="_blank">www.o-water.org</a></p>
   <p style="margin-top:20px; font-size:0.8rem; opacity:0.5;">Data processed from EPA UCMR5 PFAS monitoring results. For the most current data, visit
   <a href="https://www.epa.gov/sdwa/and-polyfluoroalkyl-substances-pfas" target="_blank">EPA.gov</a>.</p>
@@ -330,9 +318,9 @@ function checkZip() {{
     html += '<div class="detection"><strong>' + d.system + '</strong><br>' + d.pfas_type + ': <strong>' + d.concentration + ' ppt</strong> (limit: ' + d.limit + ' ppt)' + badge + '</div>';
   }});
   if (hasExceed) {{
-    html += '<p style="margin-top:14px;">We recommend using an NSF-certified reverse osmosis filter for your drinking water.</p>';
+    html += '<p style="margin-top:14px;">At least one listed detection exceeds the EPA 2024 limit.</p>';
   }} else {{
-    html += '<p style="margin-top:14px;">PFAS detected but within EPA limits. Continue monitoring and consider filtration for extra safety.</p>';
+    html += '<p style="margin-top:14px;">Listed detections are at or below the EPA 2024 limits used in this analysis.</p>';
   }}
   card.innerHTML = html;
 }}

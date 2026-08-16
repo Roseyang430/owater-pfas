@@ -1,6 +1,6 @@
 # O.Water PFAS Analysis
 
-Data-driven analysis of PFAS (forever chemicals) contamination in US drinking water, by O.Water (www.o-water.org).
+Analysis of PFAS detections in U.S. drinking water systems using EPA UCMR5 public monitoring data.
 
 This project processes EPA UCMR5 PFAS public monitoring data.
 
@@ -28,9 +28,6 @@ python3 build_report.py
 ```
 
 The raw EPA zip is ignored by git because it is large. The committed CSV is aggregated at the water-system and PFAS-compound level, using the maximum detected result for each regulated compound.
-
-## About O.Water
-O.Water is a nonprofit dedicated to water quality advocacy through data analysis and public education.
 
 ## License
 MIT

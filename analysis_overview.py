@@ -71,11 +71,10 @@ print("\n✓ chart_states.png 已保存")
 
 # === Summary in Chinese ===
 print("\n" + "=" * 50)
-print("分析解读")
+print("结果摘要")
 print("=" * 50)
 print(f"在本数据集的 {total} 条水系统-PFAS 检出记录中，有 {int(exceeded)} 条超过了 EPA 2024 年设定的标准限值，")
 print(f"整体超标率达 {rate:.1f}%。")
 print(f"其中 {pfas_exceed.index[0]} 是超标最为严重的 PFAS 化学物质，共有 {pfas_exceed.iloc[0]} 次超标。")
 print(f"从州级数据来看，{state_stats.iloc[0]['state']} 州的超标率最高，达到 {state_stats.iloc[0]['rate']:.1f}%。")
-print("这意味着在这些地区，部分供水系统中的'永久化学物质'浓度已超过联邦安全标准，")
-print("对居民健康构成潜在风险。")
+print("以上统计基于水系统-PFAS 化合物层级的最高检出值。")
